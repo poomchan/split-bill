@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:split_bill/presentation/elements/my_button.dart';
-import 'package:split_bill/presentation/screens/home_page/elements/items_table.dart';
+
+import 'elements/items_table.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({
