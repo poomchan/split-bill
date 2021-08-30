@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 80, horizontal: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,

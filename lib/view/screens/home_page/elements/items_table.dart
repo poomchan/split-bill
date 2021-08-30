@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:split_bill/view/screens/home_page/elements/people_list.dart';
 
 class ItemTable extends StatefulWidget {
   const ItemTable({Key? key}) : super(key: key);
@@ -13,10 +14,34 @@ class _ItemTableState extends State<ItemTable> {
   TableRow _buildItemRow(String name, double price) {
     return TableRow(
       children: [
+        PeopleList(
+          peopleAvatarList: [
+            CircleAvatar(
+              radius: 12,
+              backgroundColor: Colors.red,
+            ),
+            CircleAvatar(
+              radius: 12,
+              backgroundColor: Colors.yellow,
+            ),
+            CircleAvatar(
+              radius: 12,
+            )
+          ],
+        ),
         Text(name),
         Center(child: Text('\$' + price.toStringAsPrecision(2))),
-        Center(child: Icon(Icons.people)),
+        Center(child: Icon(Icons.check)),
       ],
+    );
+  }
+
+  Widget _buildTableHeader(String title) {
+    return Center(
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.bodyText1,
+      ),
     );
   }
 
@@ -25,16 +50,18 @@ class _ItemTableState extends State<ItemTable> {
     return Table(
       border: TableBorder.all(),
       columnWidths: {
-        0: FlexColumnWidth(2),
-        1: FlexColumnWidth(1),
+        0: FlexColumnWidth(1),
+        1: FlexColumnWidth(2),
         2: FlexColumnWidth(1),
+        3: FlexColumnWidth(1),
       },
       children: [
         TableRow(
           children: [
-            Center(child: Text('Items')),
-            Center(child: Text('Price')),
-            Center(child: Text('Share')),
+             _buildTableHeader(''),
+            _buildTableHeader('Item'),
+            _buildTableHeader('Price'),
+            _buildTableHeader(''),
           ],
         ),
         _buildItemRow('Galanga fried rice', 8.99),
